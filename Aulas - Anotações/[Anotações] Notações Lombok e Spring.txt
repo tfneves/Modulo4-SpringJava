@@ -1,0 +1,185 @@
+=-=-=-=--=-=-=-=-=-=-=-=-=-==-=-=-=--=-=-=-=-=-=-=-=-=-= Anotações Lombok e Spring =-=-=-=--=-=-=-=-=-=-=-=-=-==-=-=-=--=-=-=-=-=-=-=-=-=-=
+
+--> @Controller
+
+Indica que o Spring gerenciará uma classe como controller;
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> @GetMapping("/route")
+
+Indica que a requisição será do tipo GET e recebe como parâmetro o endpoint de acesso;
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> @ResponseBody
+
+Indica que o retorno da função será mostrado no corpo da resposta da requisição;
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> @PathVariable
+
+Informa que a função recebrá uma variável via URL;
+O nome da variável definida no @PathVariable tem que ser IGUAL ao nome da variável setada na rota (@GetMapping);
+
+
+Caso a variável tenha um nome diferente do parâmetro recebido via URL, é preciso informar na notação @PathVariable através do atributo name;
+
+Ex:
+
+@GetMapping("/teste/{u}")
+public String getParam(@PathVariable(name = "u") String usuario){
+    return usuario;
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> Passagem de parâmetro usando @GetMapping
+
+Para passar um parâmetro via @GetMapping, basta colocar na rota o parâmetro entre chaves "{}"
+
+EX: @GetMapping("/teste/{p}")
+    public String getParam(@PathVariable String p){
+        return p;
+    }
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> @RestController
+
+Informa que a CLASSE será uma API do tipo REST. Desse modo, não será mais necessário informar em cada função a notação @ResponseBody;
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+--> @Getter e @Setter
+
+Cria getters e setters dos atributos. Essa notação deve ficar a nível de CLASSE para abranger todos os atributos;
+
+EX (SEM Lombok): 
+
+public class Teste{
+    private String teste;
+
+    public String getTeste(){
+        return this.teste;
+    }
+
+    public void String setTeste(String teste){
+        this.teste = teste;
+    }
+}
+
+
+EX (COM Lombok):
+
+@Getter
+@Setter
+public class Teste{
+    private String teste;
+}
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+--> @Data (Usado em DTO's)
+
+Cria getters e setters, e outras notações. Essa notação deve ficar a nível de CLASSE;
+
+Ex: 
+
+@Data
+public class teste{
+    //TODO
+}
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> @NoArgsConstructor
+
+Cria um construtor sem parâmetros. Essa notação deve ficar a nível de Classe;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> @AllArgsConstructor
+
+Cria um construtor com todos os parâmetros. Essa notação deve ficar a nível de Classe;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> @Builder
+
+Essa notação é utilizada para que seja possível criar um objeto de uma classe, podendo setar valores para os atributos referentes a ela;
+
+Exemplo:
+
+@Builder
+public class Usuario{
+    private String nome;
+    private int idade;
+    private char sexo;
+}
+
+
+# Exemplo criando objeto com Builder:
+
+Usuario u1 = Usuario.builder()
+    .nome("Thomaz")
+    .idade(22)
+    .sexo('M')
+    .build();
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> @Value
+Setta um objeto ou um atributo como tipo final (imutável);
+
+Ex:
+
+@Builder
+@Value
+public class Usuario{
+    private String nome;
+    private int idade;
+    private char sexo;
+}
+
+
+# Exemplo criando objeto final (estático ou imutável) com Builder:
+
+Usuario u2 = Usuario.builder()
+    .nome("Thomaz")
+    .idade(22)
+    .sexo('M')
+    .build();
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> @RequestMapping("/homePath")
+
+Faz com que o caminho inicial das rotas dos endpoints comecem no caminho especificado no parâmetro ("/homePath").
+Para que todas as rotas tenham esse caminho inicial, é necessário que essa notação seja declarada a nível de Classe;
+
+EX:
+
+@RequestMapping("/home")
+pubic class Usuario{
+    //TODO
+}
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> @RequestParam
+
+Informa que a função recebrá uma variável via URL do tipo queryString;
+O nome da variável definida no @RequestParam tem que ser IGUAL ao nome da variável setada na rota (@RequestParam);
+
+OBS: Quando as variáveis vierem por @RequestParam, elas NÃO precisam ser declaradas no @RequestMapping;

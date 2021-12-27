@@ -1,0 +1,12 @@
+=-=-=-=-=-=-=-=-=-=-=-=-= Maven =-=-=-=-=-=-=-=-=-=-=-=-=
+
+--> É uma ferramenta de gerenciamento de projetos e construção Java;
+--> Permite Instalar bibliotecas dentro do projeto;
+
+
+# Adicionando uma dependencia em um projeto já criado:
+
+1) Acessar https://mvnrepository.com
+2) Buscar pelo nome da dependência;
+3) CLicar na dependência;
+4) Copiar o código de inclusão de dependência e colar no arquivo pom.xml, na tag <dependencies>

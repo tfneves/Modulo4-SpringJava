@@ -1,0 +1,21 @@
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-= Spring & Spring Boot =-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+--> Spring Boot
+
+# É uma extensão do Spring que permite a criação de uma aplicação web de forma fácil e rápida, pronta para a produção com o conceito de "just run" (apenas executar);
+# Requer uma configuração mínima e ele é complementado por muitos projetos da plataforma Spring e bibliotecas de terceiros;
+
+Para criar um projeto Spring, pode se utilizar o site do Spring Initializr (https://start.spring.io);
+
+
+#### Dependencias utilizadas ####
+
+- Lombok;
+- Spring Web;
+
+
+=-=-=-=-=-=-=-=--=-=-=-=-=-=-= Outras observações =-=-=-=-=-=-=-=--=-=-=-=-=-=-=
+
+--> Controlador é uma classe que responde a uma requisição HTTP;
+--> API é um conjunto de funnções e procedimentos para integrar softwares;
+--> REST é um tipo de serviço sem estado (stateless), ou seja, que não guarda informações referentes a requisições passadas;
