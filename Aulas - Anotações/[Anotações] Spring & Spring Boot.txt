@@ -19,3 +19,16 @@ Para criar um projeto Spring, pode se utilizar o site do Spring Initializr (http
 --> Controlador é uma classe que responde a uma requisição HTTP;
 --> API é um conjunto de funnções e procedimentos para integrar softwares;
 --> REST é um tipo de serviço sem estado (stateless), ou seja, que não guarda informações referentes a requisições passadas;
+
+
+--> ResponseEntity
+ É usado para representar a resposta HTTP de uma requisição.
+ Geralmente é utilizado em retorno de funções que fazem requisições;
+
+ EX:
+
+@PostMapping("/cadastro")
+public ResponseEntity<?> cadastro(@RequestBody String payload){
+    // TODO
+    return ResponseEntity.ok("OK");
+}

@@ -183,3 +183,56 @@ Informa que a função recebrá uma variável via URL do tipo queryString;
 O nome da variável definida no @RequestParam tem que ser IGUAL ao nome da variável setada na rota (@RequestParam);
 
 OBS: Quando as variáveis vierem por @RequestParam, elas NÃO precisam ser declaradas no @RequestMapping;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> @PostMapping
+Informa que a função fará uma requisição do tipo POST;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> @RequestBody
+Informa que a requisição receberá um payload.
+Os campos do payload (JSON) precisam ter os mesmos nomes dos atributos da classe modelo;
+
+EX:
+
+public class Usuario{
+    private Long id;
+    private String nome;
+    private LocalDate dataNascimento;
+    private char sexo;
+    private String senha;
+}
+
+// JSON para realizar post:
+
+{
+    "id": 1,
+    "nome": "Thomaz",
+    "dataNascimento": "1999-05-07",
+    "sexo": "M",
+    "senha": "123@mudar"
+}
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> @JsonProperty(access = Access.WRITE_ONLY)
+Informa que o atributo não será desserializado, ou seja, ele não será retornado na resposta do corpo da requisição;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> @Service
+Indica que a classe em questão será uma classe de serviço.
+Essa notação, torna os objetos dessa classe gerenciáveis pelo Spring
+As classes de serviço, geralmente são classes que contém as regras de negócio;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> @Autowired
+Usado para ineção de dependencias e inversão de controle;
