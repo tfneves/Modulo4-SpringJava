@@ -236,3 +236,20 @@ As classes de serviço, geralmente são classes que contém as regras de negóci
 
 --> @Autowired
 Usado para ineção de dependencias e inversão de controle;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> @ControllerAdvice
+Usado para informar que a classe será responsável por tratar excessões da aplicação;
+Geralmente esse controller é criado dentro de um pacote chamado Advice;
+
+Caso a exceção seja tratada com
+
+try{
+    //TODO
+}catch(Exception e){
+    //TODO
+}
+
+O advice não será chamado. Ele só será chamado quando for lançada uma exceção do tipo do Advice (throw new AdviceException);
