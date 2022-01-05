@@ -1,13 +1,13 @@
-package br.com.meli.diploma.diploma;
+package br.com.meli.calculadora_imobiliaria;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DiplomaApplication {
+public class CalculadoraImobiliariaApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DiplomaApplication.class, args);
+        SpringApplication.run(CalculadoraImobiliariaApplication.class, args);
     }
 
 }

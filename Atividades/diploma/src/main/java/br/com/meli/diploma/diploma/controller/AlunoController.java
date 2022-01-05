@@ -17,10 +17,10 @@ public class AlunoController {
 
     @Autowired
     private AlunoService alunoService;
-    
+
     @PostMapping("/calculamedia")
-    private ResponseEntity<String> calculaMedia(@RequestBody AlunoDTO aluno){
+    private ResponseEntity<String> calculaMedia(@RequestBody AlunoDTO aluno) {
         AlunoModel a = AlunoDTO.converte(aluno);
         return alunoService.ehAprovado(a);
-   }
+    }
 }

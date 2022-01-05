@@ -16,27 +16,27 @@ public class AlunoService {
 
     @Autowired
     DiplomaModel diploma;
-    
-    public ResponseEntity<String> ehAprovado(AlunoModel aluno){
+
+    public ResponseEntity<String> ehAprovado(AlunoModel aluno) {
         double media = 0;
-        for(DisciplinaModel disciplina : aluno.getDisciplinas()){
+        for (DisciplinaModel disciplina : aluno.getDisciplinas()) {
             media += disciplina.getNota();
         }
-        
-        if(media/aluno.getDisciplinas().size() > 9){
+
+        if (media / aluno.getDisciplinas().size() > 9) {
             return ResponseEntity.ok(serializeToJson(diploma, aluno, "Parabéns", media));
         }
         return ResponseEntity.ok(serializeToJson(diploma, aluno, "Reprovado", media));
     }
 
 
-    private String serializeToJson(DiplomaModel diploma, AlunoModel aluno, String msg, double media){
-        try{
+    private String serializeToJson(DiplomaModel diploma, AlunoModel aluno, String msg, double media) {
+        try {
             diploma.setAluno(aluno);
             diploma.setMensagem(msg);
             diploma.setMedia(media);
             return new ObjectMapper().writeValueAsString(diploma);
-        }catch(JsonProcessingException e){
+        } catch (JsonProcessingException e) {
             return e.getMessage();
         }
     }

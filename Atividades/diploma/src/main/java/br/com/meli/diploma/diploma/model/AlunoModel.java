@@ -10,7 +10,7 @@ import lombok.Data;
 @Builder
 @AllArgsConstructor
 public class AlunoModel {
-    
+
     private String nome;
     private ArrayList<DisciplinaModel> disciplinas;
 }

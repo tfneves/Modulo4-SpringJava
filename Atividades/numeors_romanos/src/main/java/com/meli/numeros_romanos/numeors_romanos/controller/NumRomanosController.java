@@ -2,6 +2,7 @@ package com.meli.numeros_romanos.numeors_romanos.controller;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,21 +11,21 @@ import org.springframework.web.bind.annotation.RestController;
 public class NumRomanosController {
 
     private HashMap<String, Integer> map = new HashMap<String, Integer>();
-    
+
     @GetMapping("/convert/{num}")
-    private String decimalToRoman(@PathVariable Integer num){
+    private String decimalToRoman(@PathVariable Integer num) {
         String response = "";
         populaMap();
 
-        for(Map.Entry<String, Integer> m : map.entrySet()){
-            int qtdRepeticao = num/m.getValue();
+        for (Map.Entry<String, Integer> m : map.entrySet()) {
+            int qtdRepeticao = num / m.getValue();
             response += m.getKey().repeat(qtdRepeticao);
-            num = num%m.getValue();
+            num = num % m.getValue();
         }
         return response;
     }
 
-    private void populaMap(){
+    private void populaMap() {
         this.map.put("M", 1000);
         this.map.put("M", 1000);
         this.map.put("CM", 900);

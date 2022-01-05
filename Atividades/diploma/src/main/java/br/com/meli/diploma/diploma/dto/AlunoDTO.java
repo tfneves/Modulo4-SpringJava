@@ -12,24 +12,24 @@ import lombok.Data;
 @Builder
 @AllArgsConstructor
 public class AlunoDTO {
-    
+
     private String nome;
     private ArrayList<DisciplinaModel> disciplinas;
 
-    
+
     /* Converte DTO em model */
-    public static AlunoModel converte(AlunoDTO dto){
+    public static AlunoModel converte(AlunoDTO dto) {
         return AlunoModel.builder()
-            .nome(dto.getNome())
-            .disciplinas(dto.getDisciplinas())
-            .build();
+                .nome(dto.getNome())
+                .disciplinas(dto.getDisciplinas())
+                .build();
     }
 
     /* Converte Model em DTO - Cria DTO */
-    public static AlunoDTO converte(AlunoModel aluno){
+    public static AlunoDTO converte(AlunoModel aluno) {
         return AlunoDTO.builder()
-        .nome(aluno.getNome())
-        .disciplinas(aluno.getDisciplinas())
-        .build();
+                .nome(aluno.getNome())
+                .disciplinas(aluno.getDisciplinas())
+                .build();
     }
 }

@@ -1,10 +1,10 @@
-package br.com.meli.diploma.diploma;
+package br.com.meli.calculadora_imobiliaria;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DiplomaApplicationTests {
+class CalculadoraImobiliariaApplicationTests {
 
     @Test
     void contextLoads() {

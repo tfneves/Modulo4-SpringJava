@@ -8,11 +8,11 @@
         <version>2.6.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>br.com.meli.diploma</groupId>
-    <artifactId>diploma</artifactId>
+    <groupId>br.com.meli.calculadora_imobiliaria</groupId>
+    <artifactId>calculadora_imobiliaria</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>diploma</name>
-    <description>Demo project for Spring Boot</description>
+    <name>calculadora_imobiliaria</name>
+    <description>Calculadora Imobiliaria Spring Boot</description>
     <properties>
         <java.version>11</java.version>
     </properties>
